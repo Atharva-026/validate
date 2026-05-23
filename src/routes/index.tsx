@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ScanLine, Search, Sparkles } from "lucide-react";
+import { ScanLine, Search, Sparkles, Paintbrush, Database, Download, ArrowRight, Layers, Lock } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -86,8 +86,9 @@ function Index() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="max-w-4xl mx-auto px-6 py-16 relative z-10">
-        <div className="text-center mb-16 pt-10 relative">
+      <main className="relative z-10">
+        <div className="max-w-4xl mx-auto px-6 py-16 relative">
+          <div className="text-center mb-16 pt-10 relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
           
           <div className="relative">
@@ -169,6 +170,111 @@ function Index() {
             </div>
           </div>
         </div>
+        </div>
+
+        {/* NEW Spotlight Section */}
+        <section className="relative py-24 md:py-32 overflow-hidden bg-[#050508] border-t border-border/20">
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
+           
+           <div className="max-w-7xl mx-auto px-6 relative z-10">
+              <div className="text-center mb-16">
+                 <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary mb-6 shadow-[0_0_20px_rgba(var(--primary),0.2)]">
+                   <Sparkles className="h-4 w-4" /> Introducing Mailmerge Studio
+                 </div>
+                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+                    Design once. <br className="hidden sm:block"/>
+                    <span className="text-muted-foreground">Generate thousands.</span>
+                 </h2>
+                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                   The world's easiest visual certificate builder. Upload a template, map your CSV data, and instantly generate cryptographic certificates in bulk.
+                 </p>
+              </div>
+
+              {/* Graphic Showcase */}
+              <div className="relative rounded-2xl md:rounded-[2rem] border border-white/10 bg-white/5 p-2 md:p-4 shadow-2xl backdrop-blur-xl overflow-hidden ring-1 ring-white/10 mx-auto max-w-5xl group">
+                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
+                 <img src="/mockups/studio.png" alt="Mailmerge Studio Interface" className="w-full h-auto rounded-xl md:rounded-[1.5rem] object-cover border border-white/10 shadow-2xl relative z-10" />
+              </div>
+
+              {/* Feature Grid */}
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-20">
+                 <div className="p-8 rounded-3xl bg-card/40 border border-border/50 backdrop-blur-sm hover:bg-card/60 transition-colors">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                      <Paintbrush className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">Visual Canvas</h3>
+                    <p className="text-muted-foreground">Drag and drop dynamic text blocks, QR codes, and certificate numbers exactly where you want them.</p>
+                 </div>
+                 <div className="p-8 rounded-3xl bg-card/40 border border-border/50 backdrop-blur-sm hover:bg-card/60 transition-colors">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                      <Layers className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">60+ Custom Fonts</h3>
+                    <p className="text-muted-foreground">Match your brand perfectly with over 60 integrated Google Fonts, perfectly rendered in the final PDF.</p>
+                 </div>
+                 <div className="p-8 rounded-3xl bg-card/40 border border-border/50 backdrop-blur-sm hover:bg-card/60 transition-colors">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                      <Database className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">CSV to Bulk PDFs</h3>
+                    <p className="text-muted-foreground">Map columns from any CSV to your template and automatically generate thousands of unique, verified PDFs.</p>
+                 </div>
+              </div>
+
+              <div className="mt-20 text-center">
+                 <Button asChild className="rounded-full bg-white text-black hover:bg-gray-200 h-14 px-10 text-lg font-medium shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:scale-105">
+                   <Link to="/admin">Launch Studio <ArrowRight className="h-5 w-5 ml-2" /></Link>
+                 </Button>
+              </div>
+           </div>
+        </section>
+
+        {/* Digital Verification Section */}
+        <section className="relative py-24 md:py-32 bg-black border-t border-border/20">
+           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                   Absolute Proof. <br/>
+                   <span className="text-muted-foreground">Zero doubts.</span>
+                 </h2>
+                 <p className="text-lg text-muted-foreground mb-8">
+                   Every certificate generated in the Studio is automatically registered in a secure, cryptographic database. Instantly scannable, forever verifiable.
+                 </p>
+                 
+                 <ul className="space-y-6">
+                   <li className="flex gap-4">
+                     <div className="h-8 w-8 shrink-0 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                       <Lock className="h-4 w-4 text-primary" />
+                     </div>
+                     <div>
+                       <h4 className="font-semibold text-foreground text-lg">Row Level Security</h4>
+                       <p className="text-muted-foreground">Built on Supabase with hardened PostgreSQL row-level security.</p>
+                     </div>
+                   </li>
+                   <li className="flex gap-4">
+                     <div className="h-8 w-8 shrink-0 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                       <ScanLine className="h-4 w-4 text-primary" />
+                     </div>
+                     <div>
+                       <h4 className="font-semibold text-foreground text-lg">Universal Scanners</h4>
+                       <p className="text-muted-foreground">Any smartphone camera instantly authenticates the certificate on our platform.</p>
+                     </div>
+                   </li>
+                 </ul>
+              </div>
+              <div className="relative">
+                 <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full" />
+                 <div className="relative rounded-2xl border border-white/10 bg-[#0f0f12] p-8 shadow-2xl backdrop-blur-sm flex flex-col items-center text-center">
+                    <div className="w-48 h-48 bg-white rounded-xl p-2 mb-8">
+                       <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://zuupvalidate.com/v/ZUP-EXAMPLE" alt="QR Code" className="w-full h-full opacity-90" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Verified Authentic</h3>
+                    <p className="text-green-400 text-sm font-mono bg-green-400/10 px-3 py-1 rounded-full">STATUS: SECURE</p>
+                 </div>
+              </div>
+           </div>
+        </section>
       </main>
     </div>
   );
