@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import { ShieldCheck, Zap, Code, ScanLine, Paintbrush, Database, Layers, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, ScanLine, Paintbrush, Database, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 
@@ -31,7 +31,36 @@ function Features() {
            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1 relative group">
                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-                 <img src="/mockups/studio.png" alt="Studio UI" className="relative rounded-2xl md:rounded-[1.5rem] border border-white/10 shadow-2xl" />
+                 
+                 {/* Abstract CSS Canvas Graphic */}
+                 <div className="w-full aspect-square md:aspect-[4/3] rounded-2xl md:rounded-[1.5rem] border border-white/10 bg-[#0f0f12] shadow-2xl relative z-10 p-6 flex flex-col overflow-hidden">
+                    {/* Top toolbar */}
+                    <div className="flex gap-2 mb-6">
+                      <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                    </div>
+                    {/* Editor view */}
+                    <div className="flex-1 flex gap-4">
+                       <div className="w-1/4 flex flex-col gap-2">
+                         <div className="w-full h-8 bg-white/5 rounded" />
+                         <div className="w-full h-8 bg-white/5 rounded" />
+                         <div className="w-full h-8 border border-primary/30 bg-primary/5 rounded flex items-center justify-center text-xs text-primary font-mono">{`{Name}`}</div>
+                       </div>
+                       <div className="flex-1 bg-white/10 rounded-lg border border-white/10 relative p-6 flex items-center justify-center">
+                          <div className="w-[90%] aspect-[1.4] bg-white rounded shadow-xl flex flex-col items-center justify-center relative p-6 text-center ring-1 ring-primary/20">
+                             <div className="w-12 h-12 bg-primary/10 rounded-full mb-4 flex items-center justify-center">
+                               <Paintbrush className="w-5 h-5 text-primary" />
+                             </div>
+                             <div className="w-3/4 h-2 bg-black/10 rounded mb-6" />
+                             <div className="border border-primary border-dashed px-4 py-2 bg-primary/5 text-primary font-bold">{`{Name}`}</div>
+                             <div className="absolute bottom-4 right-4 w-12 h-12 border-2 border-black/10 border-dashed rounded flex items-center justify-center">
+                               <ScanLine className="w-5 h-5 text-black/20" />
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
               </div>
               <div className="order-1 lg:order-2">
                  <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary mb-6">
@@ -71,7 +100,39 @@ function Features() {
               </div>
               <div className="relative group">
                  <div className="absolute -inset-1 bg-gradient-to-l from-blue-600 to-purple-600 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-                 <img src="/mockups/csv.png" alt="CSV Mapping UI" className="relative rounded-2xl md:rounded-[1.5rem] border border-white/10 shadow-2xl" />
+                 
+                 {/* Abstract CSS Database Mapping Graphic */}
+                 <div className="w-full aspect-square md:aspect-[4/3] rounded-2xl md:rounded-[1.5rem] border border-white/10 bg-[#0f0f12] shadow-2xl relative z-10 p-8 flex flex-col gap-4 overflow-hidden">
+                    <div className="text-sm text-muted-foreground font-mono mb-2 uppercase tracking-widest">CSV Mapping</div>
+                    
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                       <div className="flex items-center gap-3">
+                         <div className="w-8 h-8 rounded bg-blue-500/20 flex items-center justify-center text-blue-400 font-mono font-bold text-xs">C1</div>
+                         <div className="font-mono text-sm">email_address</div>
+                       </div>
+                       <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                       <div className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-md text-blue-400 text-sm">{`{Email}`}</div>
+                    </div>
+
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between">
+                       <div className="flex items-center gap-3">
+                         <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-primary font-mono font-bold text-xs">C2</div>
+                         <div className="font-mono text-sm">full_name</div>
+                       </div>
+                       <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                       <div className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-md text-primary text-sm">{`{Name}`}</div>
+                    </div>
+
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-xl flex items-center justify-between opacity-50">
+                       <div className="flex items-center gap-3">
+                         <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-white/50 font-mono font-bold text-xs">C3</div>
+                         <div className="font-mono text-sm">department</div>
+                       </div>
+                       <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                       <div className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-white/50 text-sm">Unmapped</div>
+                    </div>
+                 </div>
+
               </div>
            </div>
         </section>

@@ -54,9 +54,6 @@ function LoginPage() {
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <LogIn className="h-5 w-5 text-primary" /> Admin {mode === "signin" ? "Sign in" : "Sign up"}
           </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Restricted to {ADMIN_EMAIL}
-          </p>
           <form onSubmit={submit} className="space-y-4 mt-6">
             <div>
               <Label>Email</Label>

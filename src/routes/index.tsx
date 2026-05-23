@@ -191,10 +191,44 @@ function Index() {
                  </p>
               </div>
 
-              {/* Graphic Showcase */}
-              <div className="relative rounded-2xl md:rounded-[2rem] border border-white/10 bg-white/5 p-2 md:p-4 shadow-2xl backdrop-blur-xl overflow-hidden ring-1 ring-white/10 mx-auto max-w-5xl group">
+              {/* Graphic Showcase (Pure CSS Mockup) */}
+              <div className="relative rounded-2xl md:rounded-[2rem] border border-white/10 bg-white/5 p-2 md:p-4 shadow-2xl backdrop-blur-xl mx-auto max-w-5xl group">
                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
-                 <img src="/mockups/studio.png" alt="Mailmerge Studio Interface" className="w-full h-auto rounded-xl md:rounded-[1.5rem] object-cover border border-white/10 shadow-2xl relative z-10" />
+                 
+                 <div className="w-full aspect-video rounded-xl md:rounded-[1.5rem] border border-white/10 shadow-2xl relative z-10 bg-[#0f0f12] flex overflow-hidden ring-1 ring-white/10">
+                   {/* Sidebar */}
+                   <div className="w-48 border-r border-white/10 bg-white/5 p-4 hidden md:flex flex-col gap-3">
+                     <div className="w-full h-8 bg-white/10 rounded mb-4" />
+                     <div className="w-full h-4 bg-white/5 rounded" />
+                     <div className="w-3/4 h-4 bg-white/5 rounded" />
+                     <div className="w-full h-4 bg-white/5 rounded" />
+                     <div className="w-1/2 h-4 bg-white/5 rounded" />
+                   </div>
+                   {/* Canvas Area */}
+                   <div className="flex-1 p-6 md:p-12 flex items-center justify-center bg-[url('https://transparenttextures.com/patterns/cubes.png')] bg-black/40">
+                     {/* The Certificate Preview */}
+                     <div className="w-full max-w-lg aspect-[1.4] bg-white rounded-lg shadow-2xl relative p-6 md:p-10 flex flex-col items-center text-center ring-1 ring-black/10">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                           <Sparkles className="w-8 h-8 text-primary" />
+                        </div>
+                        <h1 className="text-2xl md:text-4xl font-serif text-black mb-2">Certificate of Excellence</h1>
+                        <p className="text-black/60 text-sm mb-4">This acknowledges that</p>
+                        
+                        <div className="w-full py-2 border-2 border-dashed border-primary/50 bg-primary/5 rounded cursor-move group/drag relative">
+                           <span className="text-xl md:text-2xl font-mono text-primary font-bold">{`{Full Name}`}</span>
+                           <div className="absolute -top-3 -right-3 bg-primary text-white text-[10px] px-2 py-0.5 rounded shadow">CSV Data</div>
+                        </div>
+
+                        <div className="w-1/2 h-px bg-black/10 my-6" />
+                        <p className="text-black/40 text-xs mt-auto">validate.zuup.dev</p>
+
+                        {/* QR Placeholder */}
+                        <div className="absolute bottom-6 right-6 w-20 h-20 bg-black/5 rounded-md border-2 border-dashed border-black/20 flex items-center justify-center cursor-move">
+                           <ScanLine className="w-8 h-8 text-black/30" />
+                        </div>
+                     </div>
+                   </div>
+                 </div>
               </div>
 
               {/* Feature Grid */}
@@ -267,7 +301,7 @@ function Index() {
                  <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full" />
                  <div className="relative rounded-2xl border border-white/10 bg-[#0f0f12] p-8 shadow-2xl backdrop-blur-sm flex flex-col items-center text-center">
                     <div className="w-48 h-48 bg-white rounded-xl p-2 mb-8">
-                       <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://zuupvalidate.com/v/ZUP-EXAMPLE" alt="QR Code" className="w-full h-full opacity-90" />
+                       <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://validate.zuup.dev/v/ZUP-EXAMPLE" alt="QR Code" className="w-full h-full opacity-90" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">Verified Authentic</h3>
                     <p className="text-green-400 text-sm font-mono bg-green-400/10 px-3 py-1 rounded-full">STATUS: SECURE</p>
